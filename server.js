@@ -11,7 +11,7 @@ var url = 'mongodb://localhost:27017/mydb'
 
 app.use('/new', require('./newlink'))
 
-
+app.use('/', require('./redirect'))
 
 db.connect(url, function (err, database) {
   if (err) {
