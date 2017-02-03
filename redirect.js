@@ -12,15 +12,15 @@ app.get('/', function(req, res){
 
 app.get('/:newUrl', function(req, res){
     var newUrlInserted = req.params.newUrl;
-        if ((newUrlInserted.length != 0) && (newUrlInserted =! 'new')){
-        db.get().collection('urls').find({newUrl : newUrlInserted}).toArray(function(err, documents) {
-            if (err) throw err;
-            console.log(documents);
-            res.redirect("http://" + documents[0].originalLink);
-        })
+    var urlNumber = parseInt(newUrlInserted)
+    if (isNaN(newUrlInserted)){
+        res.send('Insira uma barra "/" e o numero do link encurtado (ex: /12345) ou insira uma barra "/" e um link após "new" (ex: /new/www.google.com)');
     }
     else {
-        res.send('Insira uma barra "/" e o numero do link encurtado (ex: /12345) ou insira uma barra "/" e um link após "new" (ex: /new/www.google.com)');
+        db.get().collection('urls').find({newUrl : newUrlInserted}).toArray(function(err, documents) {
+            if (err) throw err;
+            res.redirect("http://" + documents[0].originalLink);
+        })
     }
 })
     
