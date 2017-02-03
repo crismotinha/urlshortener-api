@@ -1,7 +1,7 @@
 var express = require('express');
 var db = require('./db');
 var app = express();
-var url = 'mongodb://localhost:27017/mydb'
+var url = process.env.MONGOLAB_URI;
 
 //TODO
 // [x] pegar link
