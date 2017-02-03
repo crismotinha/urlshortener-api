@@ -11,6 +11,8 @@ var url = 'mongodb://localhost:27017/mydb'
 
 app.use('/new', require('./newlink'))
 
+
+
 db.connect(url, function (err, database) {
   if (err) {
     console.log('Unable to connect to the mongoDB server. Error:', err);
