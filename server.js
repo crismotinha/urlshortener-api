@@ -9,7 +9,7 @@ var url = 'mongodb://localhost:27017/mydb'
 // [ ] guardar no bd link + novo link
 // [ ] redirect do novo link para o link do bd
 
-app.use('/new/:link', require('./newlink'))
+app.use('/new', require('./newlink'))
 
 db.connect(url, function (err, database) {
   if (err) {
