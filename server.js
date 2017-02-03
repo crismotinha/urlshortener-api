@@ -3,6 +3,9 @@ var db = require('./db');
 var app = express();
 var url = process.env.MONGOLAB_URI;
 
+
+// process.env.MONGOLAB_URI;
+
 //TODO
 // [x] pegar link
 // [x] gerar um numero para representar a url
