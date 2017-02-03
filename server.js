@@ -1,7 +1,8 @@
 var express = require('express');
 var db = require('./db');
 var app = express();
-var url = process.env.MONGOLAB_URI;
+var url = "mongodb://crismotinha:123456@ds139959.mlab.com:39959/urlshortener-links"
+var dburl = process.env.MONGODB_URI;
 
 
 // process.env.MONGOLAB_URI;
